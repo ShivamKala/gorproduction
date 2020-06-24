@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>GFC Administration</title>
+    <link rel='icon' href='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSGBlYq2U9BhLG84bPdGenk8uRcM_tyuJ1B5w&usqp=CAU' type='image/x-icon'/ >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style >
+.mycontainer{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(1,100px);
+  grid-gap:1em;
+  margin-bottom:20px;
+
+}
+label{
+  color:#111d5e;
+
+}
+.tt{
+  color:#111d5e;
+}
+.ttt{
+  color:#111d5e;
+}
+.second{
+  justify-self:end;
+
+}
+img{
+  width:200px;
+}
+
+.submit{
+  background:#f4f6ff;
+  padding:20px;
+}
+@media (max-width:1200px){
+  .mycontainer{
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(1,50px);
+    grid-gap:1em;
+
+  }
+  .second{
+    justify-self:center;
+align-self:center;
+  }
+  .first{
+    display:none;
+  }
+
+}
+
+  </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+<div class=" mycontainer">
+  <div class="first">
+    <h1 class="pt-4 tt">GFC SERVER ADMINISTRATION</h1>
+  </div>
+<div class="second">
+<img src="data:image/png;base64,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" alt="">
+</div>
+</div>
+<hr>
+<h5 class="mb-3 ttt">Add Chasis Submodule Pair</h5>
+<hr>
+<form >
+    <div class="form-group row">
+        <label for="Botnumber" class="col-sm-2 col-form-label col-form-label-lg">Bot Number : </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-lg" id="Botnumber" placeholder="Bot Number" required>
+        </div>
+      </div>
+      <hr> </hr>
+      <div class="form-group row">
+          <label for="chasisnumber" class="col-sm-2 col-form-label col-form-label-lg">Chasis Number : </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control form-control-lg" id="chasisnumber"  required>
+            <small id="passwordHelpInline" class="text-muted">
+          000.xyz
+        </small>
+          </div>
+        </div>
+        <hr> </hr>
+        <div class="form-group row">
+            <label for="liftbarcode" class="col-sm-2 col-form-label col-form-label-lg">Lift Barcode : </label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control-lg" id="liftbarcode" required>
+              <small id="passwordHelpInline" class="text-muted">
+            001.xyz
+          </small>
+            </div>
+          </div>
+          <hr> </hr>
+          <div class="form-group row">
+              <label for="lmdbarcode" class="col-sm-2 col-form-label col-form-label-lg">LMD Barcode : </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control form-control-lg" id="lmdbarcode" required>
+                <small id="passwordHelpInline" class="text-muted">
+              002.xyz
+            </small>
+              </div>
+            </div>
+            <hr> </hr>
+            <div class="form-group row">
+                <label for="transmissionbarcode1:" class="col-sm-2 col-form-label col-form-label-lg">Transmission Barcode 1 : </label>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control form-control-lg" id="transmissionbarcode1" required>
+                  <small id="passwordHelpInline" class="text-muted">
+                003.xyz
+              </small>
+                </div>
+                <label for="transmissionbarcode2" class="col-sm-2 col-form-label col-form-label-lg">Transmission Barcode 2 :</label>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control form-control-lg" id="transmissionbarcode2" required>
+                  <small id="passwordHelpInline" class="text-muted">
+                003.xyz
+              </small>
+                </div>
+              </div>
+              <hr> </hr>
+              <div class="form-group row">
+                  <label for="harnessbarcode" class="col-sm-2 col-form-label col-form-label-lg">Harness Barcode : </label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-lg" id="harnessbarcode" required>
+                    <small id="passwordHelpInline" class="text-muted">
+                  004.xyz
+                </small>
+                  </div>
+                </div>
+                <hr> </hr>
+                <div class="form-group row">
+                    <label for="supermanbarcode" class="col-sm-2 col-form-label col-form-label-lg">Superman Barcode : </label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control form-control-lg" id="supermanbarcode" required>
+                      <small id="passwordHelpInline" class="text-muted">
+                    005.xyz
+                  </small>
+                    </div>
+                  </div>
+                  <hr> </hr>
+                  <div class="form-group row">
+                      <label for="ipubarcode" class="col-sm-2 col-form-label col-form-label-lg">IPU Barcode : </label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control form-control-lg" id="ipubarcode" required>
+                        <small id="passwordHelpInline" class="text-muted">
+                      006.xyz
+                    </small>
+                      </div>
+                    </div>
+                    <hr> </hr>
+                    <div class="form-group row">
+                        <label for="wmdbarcode" class="col-sm-2 col-form-label col-form-label-lg">WMD Barcode : </label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control form-control-lg" id="wmdbarcode" required>
+                          <small id="passwordHelpInline" class="text-muted">
+                        007.xyz
+                      </small>
+                        </div>
+                      </div>
+                      <hr> </hr>
+                      <div class="form-group row">
+                          <label for="erackbarcode" class="col-sm-2 col-form-label col-form-label-lg">Erack Barcode : </label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control form-control-lg" id="erackbarcode" required>
+                            <small id="passwordHelpInline" class="text-muted">
+                          008.xyz
+                        </small>
+                          </div>
+                        </div>
+                        <hr> </hr>
+                        <div class="form-group row">
+                            <label for="bmsmidslavebarcode" class="col-sm-2 col-form-label col-form-label-lg">BMS Mid Slave Barcode : </label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control form-control-lg" id="bmsmidslavebarcode" required>
+                              <small id="passwordHelpInline" class="text-muted">
+                            009.xyz
+                          </small>
+                            </div>
+                          </div>
+                          <hr> </hr>
+                          <div class="form-group row">
+                              <label for="safetyedgebarcode1:" class="col-sm-2 col-form-label col-form-label-lg">Safety Edge Barcode 1 : </label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control form-control-lg" id="Safetyedgebarcode1" required>
+                                <small id="passwordHelpInline" class="text-muted">
+                              010.xyz
+                            </small>
+                              </div>
+                              <label for="safetyedgebarcode2" class="col-sm-2 col-form-label col-form-label-lg">Safety Edge Barcode 2 : </label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control form-control-lg" id="safetyedgebarcode2" required>
+                                <small id="passwordHelpInline" class="text-muted">
+                              010.xyz
+                            </small>
+                              </div>
+                            </div>
+                            <hr> </hr>
+                            <div class="form-group row">
+                                <label for="odsbarcode1:" class="col-sm-2 col-form-label col-form-label-lg">ODS Barcode 1 : </label>
+                                <div class="col-sm-4">
+                                  <input type="text" class="form-control form-control-lg" id="odsbarcode1" required>
+                                  <small id="passwordHelpInline" class="text-muted">
+                                011.xyz
+                              </small>
+                                </div>
+                                <label for="odsbarcode2" class="col-sm-2 col-form-label col-form-label-lg">ODS Barcode 2 : </label>
+                                <div class="col-sm-4">
+                                  <input type="text" class="form-control form-control-lg" id="odsbarcode2" required>
+                                  <small id="passwordHelpInline" class="text-muted">
+                                011.xyz
+                              </small>
+                                </div>
+                              </div>
+                              <hr> </hr>
+                              <div class="form-group row">
+                                  <label for="sidedocking" class="col-sm-2 col-form-label col-form-label-lg">Sidedocking : </label>
+                                  <div class="col-sm-10">
+                                    <input type="text" class="form-control form-control-lg" id="sidedocking" required>
+                                    <small id="passwordHelpInline" class="text-muted">
+                                  012.xyz
+                                </small>
+                                  </div>
+                                </div>
+                                <hr> </hr>
+                                <div class="form-group row">
+                                    <label for="site" class="col-sm-2 col-form-label col-form-label-lg">Site : </label>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control form-control-lg" id="site" required>
+                                    </div>
+                                  </div>
+                                  <div class="submit nav justify-content-end">
+                                      <button type="submit" class=" btn btn-info">Save Chasis Submodule Pair</button>
+                                  </div>
+
+</form>
+
+</div>
+  </body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</html>
